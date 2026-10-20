@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Series picker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles-main.css">
+</head>
+<body>
+  <main class="card">
+    <h1 class="card__title">Підбери фільми та серіали під себе</h1>
+
+    <form class="form" id="search-form" novalidate>
+      <div class="field field--wide">
+        <label class="field__label" for="query">Впишіть щось що вам сподобалось</label>
+        <input
+          class="field__input field__input--underline"
+          type="text"
+          id="query"
+          name="query"
+          placeholder="Наприклад: Breaking bad, Dexter, The wire..."
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="field field--narrow">
+        <label class="field__label" for="genre">Жанр</label>
+        <input
+          class="field__input"
+          type="text"
+          id="genre"
+          name="genre"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="field field--narrow">
+        <label class="field__label" for="country">Країна</label>
+        <input
+          class="field__input"
+          type="text"
+          id="country"
+          name="country"
+          autocomplete="off"
+        >
+      </div>
+
+      <div class="field field--narrow field--range">
+        <span class="field__label" id="year-label">Дата виходу</span>
+
+        <div class="range__limits" aria-hidden="true">
+          <span id="year-min-label">1900</span>
+          <span id="year-max-label">2026</span>
+        </div>
+
+        <div class="range">
+          <input
+            class="range__input"
+            type="range"
+            id="year"
+            name="year"
+            min="1900"
+            max="2026"
+            value="2023"
+            step="1"
+            aria-labelledby="year-label"
+          >
+          <output class="range__bubble" id="year-output" for="year">2023</output>
+        </div>
+      </div>
+
+      <div class="form__actions">
+        <button class="btn" type="submit">Пошук</button>
+        <button class="btn" type="submit">Пошук</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
